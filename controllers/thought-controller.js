@@ -46,8 +46,8 @@ const thoughtController = {
       })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No id found" });
-          return;
+        return res.status(404).json({ message: "No id found" });
+        
         }
         res.json(dbUserData);
       })
@@ -61,8 +61,7 @@ const thoughtController = {
     })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No id found" });
-          return;
+        return res.status(404).json({ message: "No id found" });
         }
         res.json(dbThoughtData);
       })
@@ -114,7 +113,7 @@ const thoughtController = {
   )
     .then(dbThoughtData => {
       if (!dbThoughtData) {
-        return res.status(404).json({ message: "Nope" });
+        return res.status(404).json({ message: "No id found" });
       }
       res.json(dbThoughtData);
     })
@@ -122,4 +121,4 @@ const thoughtController = {
   }
 };
 
-module.exports = thoughtController
+module.exports = thoughtController;
